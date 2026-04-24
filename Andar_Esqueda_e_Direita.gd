@@ -35,3 +35,8 @@ func _physics_process(delta): # Comentário em cima da função _physics_process
 
     # Move o personagem usando a função move_and_slide, que lida com colisões e deslizamento.
     move_and_slide() 
+
+
+# Este método é chamado quando o personagem colide com outro corpo. Aqui, você pode lidar com colisões, como parar o movimento ou reagir a obstáculos.
+func _on_body_entered(body): # Comentário em cima da função _on_body_entered
+    pass
