@@ -36,7 +36,29 @@ func _physics_process(delta): # Comentário em cima da função _physics_process
     # Move o personagem usando a função move_and_slide, que lida com colisões e deslizamento.
     move_and_slide() 
 
+# Este script é um exemplo básico de como implementar o movimento horizontal para um personagem em um jogo 2D usando o Godot Engine. 
+# Ele permite que o personagem se mova para a esquerda e direita com uma velocidade constante, respondendo às entradas do jogador.
 
-# Este método é chamado quando o personagem colide com outro corpo. Aqui, você pode lidar com colisões, como parar o movimento ou reagir a obstáculos.
-func _on_body_entered(body): # Comentário em cima da função _on_body_entered
-    pass
+# /// ------------------------------------------------------------------///
+# Embaixo esta o código sem os comentários para facilitar a leitura:
+
+extends CharacterBody2D
+
+var velocidade: float = 150.0
+
+var direcao = vector.ZERO   
+
+func _ready():
+    pass       
+
+func _process(delta):
+    direcao.x = Input.get_action_strength("para_direita") - Input.get_action_strength("para_esquerda")
+    direcao = direcao.normalized()    
+
+
+func _physics_process(delta):
+    velocity = direcao * velocidade
+    
+    move_and_slide()    
+
+        
