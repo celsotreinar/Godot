@@ -1,6 +1,6 @@
 Informações de cada códigos
 
-Configuração de Usuário e email.
+Configuração de Usuário e email. única vez
 git config --global user.name "celso_alves"
 git config --global user.email "celso4.3alves@gmail.com"
 
@@ -11,7 +11,7 @@ verificar os estados
 git status
 
 Salvar modificação 
-git add  exemplo de arquivo  teste.txt ; *.txt  .*
+git add  exemplo de arquivo  teste.txt ; *.txt  ; *
 
 
 validar todas as modificações junto com uma mensagem descritiva 
