@@ -73,6 +73,8 @@ extends CharacterBody2D
 
 var direcao = Vector2.ZERO
 
+@onready var animacao: AnimatedSprite2D = $anima_AnimatedSprite2D # entrou isso
+
 func _ready():
 	pass
 	
@@ -84,3 +86,16 @@ func _physics_process(_delta):
 	velocity = direcao * velocidade
 	
 	move_and_slide()
+	atualizacao_animacao() # Entrou isso
+	
+func atualizacao_animacao(): # Entrou isso
+	if direcao != Vector2.ZERO: # Entrou isso
+		animacao.play("andar_walk") # Entrou isso
+	# Vira o sprite dependendo da direção # Entrou isso
+		if direcao.x != 0: # Entrou isso
+			animacao.flip_h = direcao.x < 0 # Entrou isso
+	else: # Entrou isso
+		animacao.play("parado_idle") # Entrou isso
+		
+	
+	
